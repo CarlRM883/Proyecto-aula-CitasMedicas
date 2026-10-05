@@ -1,0 +1,12 @@
+Contraste Teórico M/M/c vs SimPy v0
+
+En Teoría de Colas (M/M/c):
+- Supone buffer INFINITO (K = ∞).
+- No modela la tasa de rechazo por buffer lleno.
+- Asume tasa de llegada λ constante en el tiempo.
+
+
+En nuestro Modelo SimPy v0:
+- Implementa buffer FINITO (K = 60), capturando la tasa de rechazo real.
+- Modela variabilidad temporal (Horas Pico λ=1.0 vs Horas Valle λ=0.2).
+- Modela mezcla de trámites no homogéneos (Agendar, Reprogramar, Cancelar).
