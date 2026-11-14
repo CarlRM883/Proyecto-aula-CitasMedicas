@@ -1,18 +1,9 @@
-version: '3.8'
-
 services:
   api:
     build: .
-    command: uvicorn sistema_real.main:app --host 0.0.0.0 --port 8000
     ports:
       - "8000:8000"
+    environment:
+      - DATOS_DIR=/app/datos
     volumes:
-      - ./datos:/app/datos
-
-  simulacion:
-    build: .
-    command: python simulacion/modelo_simpy.py
-    volumes:
-      - ./datos:/app/datos
-    depends_on:
-      - api
+      - ./datos:/app/datos     # aquí quedan citas.db y telemetry_log.csv
